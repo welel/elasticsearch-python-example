@@ -95,7 +95,7 @@ def add_docs():
         }
         actions.append(action)
 
-    # В actions описано что необходимо сделать с каждым из документов, теперь
+    # В actions описано, что необходимо сделать с каждым из документов, теперь
     # просто вызываем bulk операцию.
 
     return helpers.bulk(es, actions)
