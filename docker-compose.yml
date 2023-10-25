@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+
+  elasticsearch:
+    image: elasticsearch:7.17.10
+    ports:
+      - "9200:9200"  # HTTP port
+      - "9300:9300"  # Transport port
+    environment:
+      ES_JAVA_OPTS: "-Xmx512m -Xms512m"
+      ELASTIC_USERNAME: elastic
+      ELASTIC_PASSWORD: HA38hsjd7s324DSada
+      discovery.type: single-node
+      network.host: 0.0.0.0
+      xpack.security.enabled: "true"  # For the Kibana conncetion
+    volumes:
+      - elasticsearch:/usr/share/elasticsearch/data
+
+  kibana:
+    image: kibana:7.13.4
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+    environment:
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+      ELASTICSEARCH_USERNAME: elastic
+      ELASTICSEARCH_PASSWORD: HA38hsjd7s324DSada
+
+volumes:
+  elasticsearch:

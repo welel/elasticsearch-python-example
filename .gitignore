@@ -1,3 +1,8 @@
+env/
+clean_files/
+draft_files/
+post_files/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
