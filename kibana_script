@@ -37,7 +37,7 @@ GET /_cat/indices
 # Эластика, то создавать реплики нет смысла,
 # так как Эластик всё равно не создаст их на одной ноде.
 # Создание множества шардов не повлияет на производительность.
-# Подробнее об этом: https://stackoverflow.com/questions/57136550/what-is-difference-b-w-modifying-and-updating-in-the-elasticsearch
+# Подробнее об этом: https://stackoverflow.com/questions/15694724/shards-and-replicas-in-elasticsearch
 #
 # Параметр properties задает структуру документа -
 # названия полей, их типы и другие настройки.
